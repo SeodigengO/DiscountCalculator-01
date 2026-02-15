@@ -1,3 +1,5 @@
+package main;
+
 import java.util.Scanner;
 
 public class Main
@@ -12,8 +14,10 @@ public class Main
         System.out.print("Enter discount percentage: ");
         double percentage = scanner.nextDouble();
 
-        double discount = price * (percentage/100);
+        DiscountCalculator discountCalculator = new DiscountCalculator(price,percentage);
 
-        System.out.println("The final price is " + (price - discount));
+        double discountedPrice = discountCalculator.discountedPrice();
+
+        System.out.println("The final price is " + discountedPrice);
     }
 }
